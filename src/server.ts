@@ -1,13 +1,9 @@
-import express from 'express'
-
-const app = express()
+import app from "./app";
 
 const port = process.env.PORT;
 
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hello World' })
-})
+app.listen(port, () => {
+  console.log(`[Server] - Running at ${port}!`);
+});
 
-console.log(`[Server] - Running at ${port}!`)
-
-app.listen(port)
+module.exports = app;
